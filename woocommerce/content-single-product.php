@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-
 <?php
 	/**
 	 * woocommerce_before_single_product hook.
@@ -35,8 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
-<main>
-    <div class="wrapper">
+
         <section class="post row">
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
