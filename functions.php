@@ -697,3 +697,4 @@ class top_bar_walker extends Walker_Nav_Menu {
 }
 
 require get_parent_theme_file_path( '/inc/tung-function.php' );
+require get_parent_theme_file_path( '/inc/quynh-function.php' );

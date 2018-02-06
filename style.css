@@ -23,3 +23,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .multi-post .product {
     text-align: center;
 }
+.input-group-field{
+    max-width:3.631em;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    border-radius: 0 0 0 0;
+}
