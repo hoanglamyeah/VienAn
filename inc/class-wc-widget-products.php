@@ -54,7 +54,7 @@ class Widget_Products_Vien_An extends WC_Widget
         $this->settings = array(
             'title' => array(
                 'type' => 'text',
-                'std' => __('Products', 'woocommerce'),
+                'std' => __('', 'woocommerce'),
                 'label' => __('Title', 'woocommerce'),
             ),
             'number' => array(
@@ -105,6 +105,12 @@ class Widget_Products_Vien_An extends WC_Widget
                 'std' => 0,
                 'label' => __('Show hidden products', 'woocommerce'),
             ),
+            'banner' => array(
+                'type' => 'textarea',
+                'std' => __('', 'woocommerce'),
+                'label' => 'Banner'
+            ),
+
         );
 
         parent::__construct();
@@ -229,7 +235,11 @@ class Widget_Products_Vien_An extends WC_Widget
     public function widget($args, $instance)
     {
         $start = $this->get_start_category_widget_html($instance['category'], $instance);
-        $end = '</div></section>';
+        $end = '';
+        if (!empty($instance['banner'])) {
+            $end.='</div></div><div class="cell small-3 banner-right"><div class="wrapper">'. $instance['banner'].'</div>';
+        }
+        $end .= '</div></section>';
 
         if ($this->get_cached_widget($args)) {
             return;
@@ -265,6 +275,7 @@ class Widget_Products_Vien_An extends WC_Widget
 
         $number = !empty($instance['number']) ? absint($instance['number']) : 6;
         $res = '<section class="row multi-post"><div class="category small-12"><div class="category-left">';
+
         $categories = get_all_categories($slug);
         if (count($categories) > 0) {
             $category = $categories[0];
@@ -282,7 +293,11 @@ class Widget_Products_Vien_An extends WC_Widget
             if ($number != 6) {
                 $number = 4;
             }
-            $res .= ' </div></div><div class="row small-up-2 medium-up-3 large-up-'.$number.' small-12">';
+            $res .= ' </div></div>';
+            if (!empty($instance['banner'])) {
+                $res .= '<div class="small-12"><div class="grid-x align-spaced"><div class="cell small-9">';
+            }
+            $res .= '<div class="row small-up-2 medium-up-3 large-up-' . $number . ' small-12">';
         }
         return $res;
     }
