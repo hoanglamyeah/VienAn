@@ -17,51 +17,394 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<?php if ( is_home() && ! is_front_page() ) : ?>
-		<header class="page-header">
-			<h1 class="page-title"><?php single_post_title(); ?></h1>
-		</header>
-	<?php else : ?>
-	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
-	</header>
-	<?php endif; ?>
+    <main id="homepage">
+        <div class="wrapper">
+            <section class="body-top row small-12">
+                <div class="small-12 column column-block row">
+                    <div class="row">
+                        <div class="small-9 column column-block banner">
+                            <img src="https://picsum.photos/773/365"/>
+                        </div>
+                        <div class="small-3 column column-block banner">
+                            <img src="https://picsum.photos/255/370"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+            <section class="row multi-post">
+                <div class="category small-12">
+                    <div class="category-left">Sản phẩm mới - Hàng mới về</div>
+                    <div class="category-right">
+                        <a href="">one</a>
+                        <a href="">two</a>
+                        <a href="">three</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="row small-up-2 medium-up-3 large-up-5 small-12">
+                        <div class="product column column-block">
+                            <div class="image">
+                                <div class="discount">
+                                    <div class="discount-number">- 13%</div>
+                                </div>
+                                <a href="">
+                                    <img src="https://picsum.photos/300/300" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                            <div class="price">Liên hệ</div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <div class="discount">
+                                    <div class="discount-number">- 13%</div>
+                                </div>
+                                <a href="">
+                                    <img src="https://picsum.photos/300/300" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                            <div class="price">Liên hệ</div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <div class="discount">
+                                    <div class="discount-number">- 13%</div>
+                                </div>
+                                <a href="">
+                                    <img src="https://picsum.photos/300/300" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                            <div class="price">Liên hệ</div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <div class="discount">
+                                    <div class="discount-number">- 13%</div>
+                                </div>
+                                <a href="">
+                                    <img src="https://picsum.photos/300/300" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                            <div class="price">Liên hệ</div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <div class="discount">
+                                    <div class="discount-number">- 13%</div>
+                                </div>
+                                <a href="">
+                                    <img src="https://picsum.photos/300/300" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                            <div class="price">Liên hệ</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-			<?php
-			if ( have_posts() ) :
+            <section class="row multi-post">
+                <div class="category small-12">
+                    <div class="category-left">Cây lăn ngải đồng - nhang ngải cứu</div>
+                    <div class="category-right">
+                        <a href="">one</a>
+                        <a href="">two</a>
+                        <a href="">three</a>
+                    </div>
+                </div>
 
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+                <div class="small-12">
+                    <div class="grid-x align-spaced"> <!-- Aligned to the space around -->
+                        <div class="cell small-9">
+                            <div class="row small-up-2 medium-up-3 large-up-4 small-9">
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell small-3 banner-right">
+                            <div class="wrapper">
+                                <img src="https://picsum.photos/280/590"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/post/content', get_post_format() );
+            <section class="row multi-post">
+                <div class="category small-12">
+                    <div class="category-left">Cây lăn ngải đồng - nhang ngải cứu</div>
+                    <div class="category-right">
+                        <a href="">one</a>
+                        <a href="">two</a>
+                        <a href="">three</a>
+                    </div>
+                </div>
 
-				endwhile;
+                <div class="small-12">
+                    <div class="grid-x align-spaced"> <!-- Aligned to the space around -->
+                        <div class="cell small-9">
+                            <div class="row small-up-2 medium-up-3 large-up-4 small-9">
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                                <div class="product column column-block">
+                                    <div class="image">
+                                        <div class="discount">
+                                            <div class="discount-number">- 13%</div>
+                                        </div>
+                                        <a href="">
+                                            <img src="https://picsum.photos/300/300" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="price">Liên hệ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell small-3 banner-right">
+                            <div class="wrapper">
+                                <img src="https://picsum.photos/280/280"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-				the_posts_pagination( array(
-					'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-				) );
-
-			else :
-
-				get_template_part( 'template-parts/post/content', 'none' );
-
-			endif;
-			?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+            <section class="row multi-post">
+                <div class="small-12">
+                    <div><h2>Tin mới nhất</h2></div>
+                </div>
+                <div>
+                    <div class="row small-up-2 medium-up-3 large-up-6 small-12">
+                        <div class="product column column-block">
+                            <div class="image">
+                                <a href="">
+                                    <img src="https://picsum.photos/300/200" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <a href="">
+                                    <img src="https://picsum.photos/300/200" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <a href="">
+                                    <img src="https://picsum.photos/300/200" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <a href="">
+                                    <img src="https://picsum.photos/300/200" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <a href="">
+                                    <img src="https://picsum.photos/300/200" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                        </div>
+                        <div class="product column column-block">
+                            <div class="image">
+                                <a href="">
+                                    <img src="https://picsum.photos/300/200" alt="">
+                                </a>
+                            </div>
+                            <div class="product-name">
+                                <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
 <?php get_footer();

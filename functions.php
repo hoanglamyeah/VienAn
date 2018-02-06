@@ -315,31 +315,51 @@ function twentyseventeen_widgets_init() {
 		'name'          => __( 'Blog Sidebar', 'twentyseventeen' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'twentyseventeen' ),
-		'id'            => 'sidebar-2',
+		'id'            => 'sidebar-footer-1',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+        'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 2', 'twentyseventeen' ),
-		'id'            => 'sidebar-3',
+		'id'            => 'sidebar-footer-2',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+        'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
 	) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 3', 'twentyseventeen' ),
+        'id'            => 'sidebar-footer-3',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 4', 'twentyseventeen' ),
+        'id'            => 'sidebar-footer-4',
+        'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
+    ) );
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
@@ -446,11 +466,11 @@ function twentyseventeen_scripts() {
 		$twentyseventeen_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
 		$twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
-    wp_enqueue_script( 'twentyseventeen-manifest', get_theme_file_uri( '/static/js/js/manifest.0a39dc4c91083f03f344.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'twentyseventeen-manifest', get_theme_file_uri( '/static/js/manifest.7cc8c96c79adf073f140.js' ), array( 'jquery' ), '1.0', true );
 
-    wp_enqueue_script( 'twentyseventeen-vendor', get_theme_file_uri( '/static/js/js/vendor.a2913023eff063a599bd.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'twentyseventeen-vendor', get_theme_file_uri( '/static/js/vendor.a2913023eff063a599bd.js' ), array( 'jquery' ), '1.0', true );
 
-    wp_enqueue_script( 'twentyseventeen-app', get_theme_file_uri( '/static/js/js/app.1564d70786256a4b7b35.js' ), array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'twentyseventeen-app', get_theme_file_uri( '/static/js/app.1bea6e9b04e1fa973931.js' ), array( 'jquery' ), '1.0', true );
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
@@ -589,3 +609,29 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
+class top_bar_walker extends Walker_Nav_Menu {
+
+    function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+        $element->has_children = !empty( $children_elements[$element->ID] );
+        $element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+        $element->classes[] = ( $element->has_children ) ? 'has-dropdown not-click' : '';
+        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+    function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+        $item_html = '';
+        parent::start_el( $item_html, $object, $depth, $args );
+        $classes = empty( $object->classes ) ? array() : (array) $object->classes;
+        if ( in_array('label', $classes) ) {
+            $item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
+        }
+        if ( in_array('divider', $classes) ) {
+            $item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
+        }
+        $output .= $item_html;
+    }
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= "\n<ul id='private-dropdown' class=\"mega-menu vertical dropdown menu first-sub\">\n";
+    }
+}

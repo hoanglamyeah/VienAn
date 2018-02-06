@@ -23,96 +23,76 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-
-    <header>
-        <div class="header-ads">
-            <div class="wrapper">
-                <img src="https://picsum.photos/1200/66"/>
-            </div>
-        </div>
+<header>
+    <div class="header-ads">
         <div class="wrapper">
-            <div class="main-header">
-                <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                    <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-                    <div class="title-bar-title">Menu</div>
-                </div>
+            <img src="https://picsum.photos/1200/66"/>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                <div class="title-bar-title">Menu</div>
+            </div>
 
-                <div class="top-bar" id="responsive-menu">
-                    <div class="top-bar-left">
-                        <ul class="menu" data-dropdown-menu>
-                            <li class="menu-text logo-aria">
-                                <img src="https://thietbiytevienan.com/wp-content/uploads/2018/01/logvienanmoi-01-01-01.png"/>
-                            </li>
-                            <li class="search-bar">
-                                <input type="search" placeholder="Search">
-                            </li>
-                            <li class="search-button">
-                                <button type="button" class="button">Tìm kiếm</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="top-bar-right">
-                        <ul class="dropdown menu" data-dropdown-menu>
-                            <li class="account">
-                                <a href="">
-                                    <span class="profile"><img src="https://picsum.photos/80/80"/></span>
-                                    <span>Đăng nhập</span>
-                                    <span>Tài khoản & đơn hàng</span>
-                                </a>
-                                <ul class="menu">
-                                    <li><a href="#">Item 1A</a></li>
-                                    <li><a href="#">Item 1A</a></li>
-                                    <li><a href="#">Item 1A</a></li>
-                                </ul>
-                            </li>
-                            <li class="shopping-cart">
-                                <i class="fa fa-cart-plus">
-                                    <label class="label">0</label>
-                                </i>
-                                <label>Gio Hang</label>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="top-bar" id="responsive-menu">
+                <div class="small-3">
+                    <ul class="menu" data-dropdown-menu>
+                        <li class="logo-aria">
+                            <a href="<?php echo get_home_url(); ?>"><img src="https://thietbiytevienan.com/wp-content/uploads/2018/01/logvienanmoi-01-01-01.png"/></a>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="top-bar second-bar grid-x">
-                    <div class="top-bar-left large-3">
-                        <ul class="dropdown menu root-menu" data-dropdown-menu>
-                            <li>
-                                <a href="#">Item 1</a>
-                                <ul class="mega-menu vertical dropdown menu">
-                                    <li>
-                                        <a href="#">Item 1</a>
-                                        <ul class="vertical menu nested">
-                                            <li><a href="#">Item 1A</a></li>
-                                            <div class="grid-x">
-                                                <div class="large-auto cell">One</div>
-                                                <div class="large-auto cell">Two</div>
-                                                <div class="large-auto cell">Three</div>
-                                                <div class="large-auto cell">Four</div>
-                                                <div class="large-auto cell">Five</div>
-                                                <div class="large-auto cell">Six</div>
-                                            </div>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Item 2</a></li>
-                                    <li><a href="#">Item 3</a></li>
-                                    <li><a href="#">Item 4</a></li>
-                                    <!-- ... -->
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="top-bar-right large-9">
-                        <ul class="menu">
-                            <li>Khuyến Mãi</li>
-                            <li>Tổng đài CSKH: 0123456789</li>
-                        </ul>
+                <div class="small-9">
+                    <div class="dropdown menu row small-12" data-dropdown-menu>
+                        <?php get_search_form(); ?>
+                        <div class="small-4 account-cart">
+                            <div class="wrap grid-x">
+                                <div class="small-6 account">
+                                    <div class="left">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <div class="right">
+                                        <span>Đăng nhập</span>
+                                        <span>Tài khoản</span>
+                                    </div>
+                                </div>
+                                <div class="small-6 cart">
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span class="text">Giỏ hàng </span>
+                                        <span class="count">10</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="top-bar second-bar grid-x">
+                <div class="top-bar-left large-3">
+                    <?php wp_nav_menu(array(
+                        'menu_id' => 'root-menu',
+                        'menu_class' => 'dropdown menu root-menu',
+                        'theme_location' => 'top',
+                        'container' => '',
+                        'walker' => new top_bar_walker()
+                    )); ?>
+                </div>
+                <div class="top-bar-right large-9">
+                    <ul class="menu">
+                        <li><img src="https://zshop.vn/images/banner_v3_2/icon_km.gif"
+                                 rel="float: left; margin: 0px 0px 5px 0px; background-color: initial;" alt="Khuyến mãi"
+                                 style="float: left; margin: 0px 0px 5px 0px; background-color: initial;">Khuyến Mãi
+                        </li>
+                        <li><a href="">Hướng dẫn mua hàng</a></li>
+                        <li>Tổng đài CSKH: 0123456789</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </header>
-    <main>
-        <div class="wrapper">
+    </div>
+</header>

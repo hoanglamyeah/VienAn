@@ -13,88 +13,56 @@
  */
 
 ?>
-</div>
-</main>
 <div class="small-12 subscribe">
     <div class="wrapper grid-x">
         <div class="large-auto cell">
             <h4 class="title">ĐĂNG KÝ NHẬN BẢN TIN VÀ NHIỀU TÀI LIỆU BỔ ÍCH</h4>
         </div>
         <div class="large-auto cell">
-            <div class="medium-6 input-group">
+            <div class="medium-12 input-group">
                 <input class="input-group-field" type="text">
                 <div class="input-group-button">
-                    <input type="submit" class="button" value="Đăng ký nhận bản tin">
+                    <input type="submit" class="button" value="Submit">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<footer>
-    <div class="wrapper">
-        <div class="grid-x">
-            <div class="large-auto cell footer-widget">
-                <div class="widget">
-                    <div class="wrap">
-                        <h4 class="widget-title">DANH MỤC KINH DOANH</h4>
-                        <div class="widget-body">
-                            <ul>
-                                <li>Quy trình giao dịch</li>
-                                <li>Quy Trình Bảo Hành</li>
-                                <li>Chính sách thanh toán</li>
-                                <li>Danh mục tài khoản ngân hàng</li>
-                            </ul>
-                        </div>
+<footer class="footer">
+    <?php
+    if ( is_active_sidebar( 'sidebar-footer-1' ) ||
+        is_active_sidebar( 'sidebar-footer-2' ) ) :
+        ?>
+
+        <div class="wrapper">
+            <div class="grid-x">
+                <?php
+                if ( is_active_sidebar( 'sidebar-footer-1' ) ) { ?>
+                    <div class="large-auto cell footer-widget">
+                        <?php dynamic_sidebar( 'sidebar-footer-1' ); ?>
                     </div>
-                </div>
-            </div>
-            <div class="large-auto cell footer-widget">
-                <div class="widget">
-                    <div class="wrap">
-                        <h4 class="widget-title">DANH MỤC KINH DOANH</h4>
-                        <div class="widget-body">
-                            <ul>
-                                <li>Quy trình giao dịch</li>
-                                <li>Quy Trình Bảo Hành</li>
-                                <li>Chính sách thanh toán</li>
-                                <li>Danh mục tài khoản ngân hàng</li>
-                            </ul>
-                        </div>
+                <?php }
+                if ( is_active_sidebar( 'sidebar-footer-2' ) ) { ?>
+                    <div class="large-auto cell footer-widget">
+                        <?php dynamic_sidebar( 'sidebar-footer-2' ); ?>
                     </div>
-                </div>
-            </div>
-            <div class="large-auto cell footer-widget">
-                <div class="widget">
-                    <div class="wrap">
-                        <h4 class="widget-title">DANH MỤC KINH DOANH</h4>
-                        <div class="widget-body">
-                            <ul>
-                                <li>Quy trình giao dịch</li>
-                                <li>Quy Trình Bảo Hành</li>
-                                <li>Chính sách thanh toán</li>
-                                <li>Danh mục tài khoản ngân hàng</li>
-                            </ul>
-                        </div>
+                <?php } ?>
+                <?php
+                if ( is_active_sidebar( 'sidebar-footer-3' ) ) { ?>
+                    <div class="large-auto cell footer-widget">
+                        <?php dynamic_sidebar( 'sidebar-footer-3' ); ?>
                     </div>
-                </div>
-            </div>
-            <div class="large-auto cell footer-widget">
-                <div class="widget">
-                    <div class="wrap">
-                        <h4 class="widget-title">DANH MỤC KINH DOANH</h4>
-                        <div class="widget-body">
-                            <ul>
-                                <li>Quy trình giao dịch</li>
-                                <li>Quy Trình Bảo Hành</li>
-                                <li>Chính sách thanh toán</li>
-                                <li>Danh mục tài khoản ngân hàng</li>
-                            </ul>
-                        </div>
+                <?php } ?>
+                <?php
+                if ( is_active_sidebar( 'sidebar-footer-4' ) ) { ?>
+                    <div class="large-auto cell footer-widget">
+                        <?php dynamic_sidebar( 'sidebar-footer-4' ); ?>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
-    </div>
+
+    <?php endif; ?>
 </footer>
 <?php wp_footer(); ?>
 </body>
