@@ -244,9 +244,9 @@ class Widget_Products_Vien_An extends WC_Widget
 
             while ($products->have_posts()) {
                 $products->the_post();
-//                get_template_part('content-widget-product-category.php');
 
-                wc_get_template('content-widget-product-category.php', array('show_rating' => false));
+                wc_get_template('template-parts/post/content-widget-product-category.php', array('show_rating' => false), get_template_directory());
+
 //
             }
 
