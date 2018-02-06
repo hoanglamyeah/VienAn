@@ -351,15 +351,55 @@ function twentyseventeen_widgets_init() {
         'after_title'   => '</h4>',
     ) );
 
-    register_sidebar( array(
-        'name'          => __( 'Footer 4', 'twentyseventeen' ),
-        'id'            => 'sidebar-footer-4',
-        'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
+    register_sidebar(array(
+        'name' => __('Footer 4', 'twentyseventeen'),
+        'id' => 'sidebar-footer-4',
+        'description' => __('Add widgets here to appear in your footer.', 'twentyseventeen'),
         'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
-        'after_widget'  => '</div></section>',
-        'before_title'  => '<h4 class="widget-title">',
-        'after_title'   => '</h4>',
-    ) );
+        'after_widget' => '</div></section>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Trang Chủ 1', 'twentyseventeen'),
+        'id' => 'sidebar-home-1',
+        'description' => __('Trang chủ 1', 'twentyseventeen'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+    register_sidebar(array(
+        'name' => __('Trang Chủ 2', 'twentyseventeen'),
+        'id' => 'sidebar-home-2',
+        'description' => __('Trang chủ 2', 'twentyseventeen'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+    register_sidebar(array(
+        'name' => __('Trang Chủ 3', 'twentyseventeen'),
+        'id' => 'sidebar-home-3',
+        'description' => __('Trang chủ 3', 'twentyseventeen'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+    register_sidebar(array(
+        'name' => __('Trang Chủ 4', 'twentyseventeen'),
+        'id' => 'sidebar-home-4',
+        'description' => __('Trang chủ 4', 'twentyseventeen'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
+
+    register_widget( 'Widget_Products_Vien_An' );
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
@@ -635,3 +675,5 @@ class top_bar_walker extends Walker_Nav_Menu {
         $output .= "\n<ul id='private-dropdown' class=\"mega-menu vertical dropdown menu first-sub\">\n";
     }
 }
+
+require get_parent_theme_file_path( '/inc/tung-function.php' );
