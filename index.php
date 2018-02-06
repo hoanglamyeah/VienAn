@@ -35,6 +35,26 @@ get_header(); ?>
             <?php if (is_active_sidebar('sidebar-home-1')) : ?>
                 <?php dynamic_sidebar('sidebar-home-1'); ?>
             <?php endif; ?>
+
+            <?php if (is_active_sidebar('sidebar-home-2')) : ?>
+                <?php dynamic_sidebar('sidebar-home-2'); ?>
+            <?php endif; ?>
+
+            <?php if (is_active_sidebar('sidebar-home-3')) : ?>
+                <?php dynamic_sidebar('sidebar-home-3'); ?>
+            <?php endif; ?>
+
+            <?php if (is_active_sidebar('sidebar-home-4')) : ?>
+                <?php dynamic_sidebar('sidebar-home-4'); ?>
+            <?php endif; ?>
+
+            <?php if (is_active_sidebar('sidebar-home-5')) : ?>
+                <?php dynamic_sidebar('sidebar-home-5'); ?>
+            <?php endif; ?>
+
+            <?php if (is_active_sidebar('sidebar-home-6')) : ?>
+                <?php dynamic_sidebar('sidebar-home-6'); ?>
+            <?php endif; ?>
         </div>
     </main>
 
