@@ -36,6 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
         <section class="post row">
+            <div class="small-12 medium-9">
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
@@ -78,7 +79,63 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
+</div>
+            </div>
+            <div id="product-sidebar" class="small-12 medium-3 sidebar">
+                <div class="widget product-menu">
+                    <span class="shop-sidebar">DANH MỤC SẢN PHẨM</span>
+                    <ul class="vertical menu accordion-menu" data-accordion-menu>
 
+                        <?php
+                        /* Get all categories of woocommerce for making side-bar */
+                        $taxonomy = 'product_cat';
+                        $orderby = 'name';
+                        $show_count = 0;      // 1 for yes, 0 for no
+                        $pad_counts = 0;      // 1 for yes, 0 for no
+                        $hierarchical = 1;      // 1 for yes, 0 for no
+                        $title = '';
+                        $empty = 0;
+
+                        $args = array(
+                            'taxonomy' => $taxonomy,
+                            'orderby' => $orderby,
+                            'show_count' => $show_count,
+                            'pad_counts' => $pad_counts,
+                            'hierarchical' => $hierarchical,
+                            'title_li' => $title,
+                            'hide_empty' => $empty
+                        );
+                        $all_categories = get_categories($args);
+                        foreach ($all_categories as $cat) {
+                            if ($cat->category_parent == 0) {
+                                $category_id = $cat->term_id;
+                                echo '<li><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $cat->name . '</a><ul class="menu vertical nested">';
+
+                                $args2 = array(
+                                    'taxonomy' => $taxonomy,
+                                    'child_of' => 0,
+                                    'parent' => $category_id,
+                                    'orderby' => $orderby,
+                                    'show_count' => $show_count,
+                                    'pad_counts' => $pad_counts,
+                                    'hierarchical' => $hierarchical,
+                                    'title_li' => $title,
+                                    'hide_empty' => $empty
+                                );
+                                $sub_cats = get_categories($args2);
+                                if ($sub_cats) {
+                                    foreach ($sub_cats as $sub_category) {
+                                        echo '<li><a href="' . get_term_link($sub_category, 'product_cat') . '">' . $sub_category->name . '</a></li>';
+                                    }
+                                }
+                                echo '</ul></li>';
+                            }
+                        }
+                        ?>
+
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
 </div><!-- #product-<?php the_ID(); ?> -->
