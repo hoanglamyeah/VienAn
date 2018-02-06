@@ -8,7 +8,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since 1.0
+ * @since 1.0s
  * @version 1.0
  */
 
