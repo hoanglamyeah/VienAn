@@ -228,8 +228,8 @@ class Widget_Products_Vien_An extends WC_Widget
      */
     public function widget($args, $instance)
     {
-        $start = $this->get_start_category_widget_html($instance['category']);
-        $end = '</div></div></section>';
+        $start = $this->get_start_category_widget_html($instance['category'], $instance);
+        $end = '</div></section>';
 
         if ($this->get_cached_widget($args)) {
             return;
@@ -260,8 +260,10 @@ class Widget_Products_Vien_An extends WC_Widget
         echo $this->cache_widget($args, ob_get_clean());
     }
 
-    public function get_start_category_widget_html($slug = '')
+    public function get_start_category_widget_html($slug = '', $instance)
     {
+
+        $number = !empty($instance['number']) ? absint($instance['number']) : 6;
         $res = '<section class="row multi-post"><div class="category small-12"><div class="category-left">';
         $categories = get_all_categories($slug);
         if (count($categories) > 0) {
@@ -277,7 +279,10 @@ class Widget_Products_Vien_An extends WC_Widget
             foreach ($sub as $cat) {
                 $res .= '<a href="' . esc_url(get_category_link($cat->term_id)) . '">' . $cat->name . '</a>';
             }
-            $res .= ' </div></div><div><div class="row small-up-2 medium-up-3 large-up-5 small-12">';
+            if ($number != 6) {
+                $number = 4;
+            }
+            $res .= ' </div></div><div class="row small-up-2 medium-up-3 large-up-'.$number.' small-12">';
         }
         return $res;
     }

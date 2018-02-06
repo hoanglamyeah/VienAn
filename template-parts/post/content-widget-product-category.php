@@ -10,14 +10,14 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.woocommerce.com/document/template-structure/
+ * @see    https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 2.5.0
  */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
@@ -25,27 +25,33 @@ global $product; ?>
 <div class="product column column-block">
     <div class="image">
         <div class="discount">
-            <?php if ($product->is_on_sale()):?>
+            <?php if ($product->is_on_sale()): ?>
                 <div class="discount-number">
                     - <?php echo get_sale_percentage($product) ?>%
                 </div>
             <?php endif; ?>
         </div>
-        <a href="<?php echo esc_url( get_the_permalink() )?>">
+        <a href="<?php echo esc_url(get_the_permalink()) ?>">
             <img src="<?php echo get_the_post_thumbnail_url($product->get_id()) ?>" alt="">
 
         </a>
     </div>
     <div class="product-name">
-        <a href="">
+        <a href="<?php echo esc_url(get_the_permalink()) ?>">
             <?php
             echo $product->get_title();
             ?>
         </a>
     </div>
-    <div class="price">
-        <?php
-        echo $product->get_price();
-        ?>
-    </div>
+    <?php if (empty($product->get_price())) : ?>
+        <div class="price">
+            Liên hệ
+        </div>
+    <?php else: ?>
+        <div class="price number">
+            <?php
+            echo $product->get_price();
+            ?>
+        </div>
+    <?php endif; ?>
 </div>

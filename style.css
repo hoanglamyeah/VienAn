@@ -19,3 +19,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .category .category-left a{
     color: #fff;
 }
+
+.multi-post .product {
+    text-align: center;
+}
