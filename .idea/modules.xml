@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Desktop/fuckdu/.idea/fuckdu.iml" filepath="$USER_HOME$/Desktop/fuckdu/.idea/fuckdu.iml" />
       <module fileurl="file://$USER_HOME$/Documents/Dropbox/Project/my-project/.idea/my-project.iml" filepath="$USER_HOME$/Documents/Dropbox/Project/my-project/.idea/my-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/../twentyseventeen/.idea/twentyseventeen.iml" filepath="$PROJECT_DIR$/../twentyseventeen/.idea/twentyseventeen.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/vienan.iml" filepath="$PROJECT_DIR$/.idea/vienan.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../.idea/wordpress.iml" filepath="$PROJECT_DIR$/../../../.idea/wordpress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../.idea/wp-content.iml" filepath="$PROJECT_DIR$/../../.idea/wp-content.iml" />
     </modules>
   </component>
 </project>

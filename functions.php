@@ -24,6 +24,7 @@ if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
 function twentyseventeen_setup()
 {
     /*
@@ -735,6 +736,7 @@ class top_bar_walker extends Walker_Nav_Menu
 
 require get_parent_theme_file_path('/inc/tung-function.php');
 require get_parent_theme_file_path('/inc/quynh-function.php');
+require get_parent_theme_file_path('/inc/custom_lam.php');
 
 function my_custom_woocommerce_theme_support()
 {

@@ -24,11 +24,7 @@
 
 <body <?php body_class(); ?>>
 <header>
-    <div class="header-ads">
-        <div class="wrapper">
-            <img src="https://picsum.photos/1200/66"/>
-        </div>
-    </div>
+
     <div class="wrapper">
         <div class="main-header">
             <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">

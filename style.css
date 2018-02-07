@@ -50,5 +50,41 @@ ins{
 }
 .woocommerce div.product p.price{
     color: red;
-    max-font-size: 1.75em;
+    font-size: 1.75em;
+}
+
+.woocommerce ul.products li.product .onsale {
+    display: none;
+}
+
+.button {
+    background-color: #1779ba!important;
+    border-radius: 0px!important;
+    color: #fff!important;
+}
+.woocommerce-breadcrumb {
+	margin:20px 0 10px!important;
+    text-transform: uppercase;
+    font-size: 13px!important;
+}
+.woocommerce-breadcrumb a {
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.account-cart .right a {
+	padding: 0px;
+}
+
+.edit-link { display: none; }
+main {
+    min-height: 70vh;
+}
+.multi-post .product {
+    text-align: left;
+}
+
+.menu .active>a, .menu .is-active>a {
+    background: #fff;
+    color: #000;
 }

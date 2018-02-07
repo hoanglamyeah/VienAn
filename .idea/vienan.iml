@@ -7,5 +7,7 @@
     <orderEntry type="module" module-name="my-project" />
     <orderEntry type="module" module-name="twentyseventeen" />
     <orderEntry type="module" module-name="wordpress" />
+    <orderEntry type="module" module-name="wp-content" />
+    <orderEntry type="module" module-name="fuckdu" />
   </component>
 </module>
