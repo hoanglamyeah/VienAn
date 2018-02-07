@@ -54,15 +54,15 @@
                                         <i class="fa fa-user"></i>
                                     </div>
                                     <div class="right">
-                                        <span>Đăng nhập</span>
-                                        <span>Tài khoản</span>
+                                        <span><a href="tai-khoan">Tài khoản</a></span>
+                                        <span></span>
                                     </div>
                                 </div>
                                 <div class="small-6 cart">
-                                    <a href="#">
+                                    <a href="<?php echo wc_get_cart_url(); ?>">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span class="text">Giỏ hàng </span>
-                                        <span class="count">10</span>
+                                        <span class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                                     </a>
                                 </div>
                             </div>

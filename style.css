@@ -13,19 +13,42 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-rea
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
 @import url("../vienan/static/css/app.fbe893614704e0cc3eb695ace6a05cb9.css");
 
-.category .category-left a{
+.category .category-left a {
     color: #fff;
 }
 
 .multi-post .product {
     text-align: center;
 }
-.input-group-field{
-    max-width:3.631em;
+
+.woocommerce .quantity .qty{
+    max-width: 3.63em;
 }
+
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
     border-radius: 0 0 0 0;
+}
+
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
+    border-color: #0a0a0a transparent transparent;
+}
+
+.woocommerce div.product form.cart .button {
+    background-color: #0C683A;
+    border: none;
+}
+
+.woocommerce table.shop_attributes {
+    text-align: left;
+    margin-left: -10px;
+}
+
+ins{
+    text-decoration: none;
+}
+.woocommerce div.product p.price{
+    color: red;
+    font-size: 1.75em;
 }

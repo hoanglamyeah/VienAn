@@ -1,21 +1,52 @@
 <?php
-add_filter('woocommerce_single_product_summary', 'woo_rename_tabs', 70);
-
-function woo_rename_tabs($tabs)
+//get product attributes
+function woocommerce_custom_output_addtinonal_information()
 {
-
     global $product;
+    $attributes = $product->get_attributes();
+    echo ' <table class="shop_attributes"><ul>';
+    foreach ($attributes as $attribute) {
+        echo '<tr><th>' . wc_attribute_label($attribute->get_name())
+            . ':</th>';
+        echo '<td>';
+        $values = array();
 
-    if ($product->has_attributes() || $product->has_dimensions() || $product->has_weight()) { // Check if product has attributes, dimensions or weight
-        $tabs = array(
-            'additional_information' => array(
-                'priority'=>'Quynh Data'
-            )
-        );
-//        $tabs['additional_information']['title'] = __('Quynh DATA');
+        if ($attribute->is_taxonomy()) {
+            $attribute_taxonomy = $attribute->get_taxonomy_object();
+            $attribute_values = wc_get_product_terms($product->get_id(), $attribute->get_name(), array('fields' => 'all'));
+
+            foreach ($attribute_values as $attribute_value) {
+                $value_name = esc_html($attribute_value->name);
+
+                if ($attribute_taxonomy->attribute_public) {
+                    $values[] = '<a href="' . esc_url(get_term_link($attribute_value->term_id, $attribute->get_name())) . '" rel="tag">' . $value_name . '</a>';
+                } else {
+                    $values[] = $value_name;
+                }
+            }
+        } else {
+            $values = $attribute->get_options();
+
+            foreach ($values as &$value) {
+                $value = make_clickable(esc_html($value));
+            }
+        }
+
+        echo apply_filters('woocommerce_attribute', wpautop(wptexturize(implode(', ', $values))), $attribute, $values);
+        echo '</td></tr>';
     }
-    return $tabs;
-
+    echo '</table>';
 }
+
+add_action('woocommerce_single_product_summary', 'woocommerce_custom_output_addtinonal_information', 5);
+
+//remove additional information tab
+function woo_remove_product_tabs($tabs)
+{
+    unset($tabs['additional_information']);    // Remove the additional information tab
+    return $tabs;
+}
+
+add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
 
 ?>
