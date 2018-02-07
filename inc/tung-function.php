@@ -1,6 +1,6 @@
 <?php
 
-include_once get_parent_theme_file_path( '/inc/class-wc-widget-products.php' );
+
 
 function get_subcategories($parent) {
     $terms = get_terms(array(

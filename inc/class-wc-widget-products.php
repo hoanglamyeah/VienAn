@@ -14,7 +14,6 @@ if (!defined('ABSPATH')) {
  * @extends  WC_Widget
  */
 
-include 'abstract-wc-widget-vienan.php';
 
 $category_options = array();
 
@@ -239,7 +238,7 @@ class Widget_Products_Vien_An extends WC_Widget_Vien_An
         $start = $this->get_start_category_widget_html($instance['category'], $instance);
         $end = '';
         if (!empty($instance['banner'])) {
-            $end.='</div></div><div class="cell small-3 banner-right"><div class="wrapper">'. $instance['banner'].'</div>';
+            $end .= '</div></div><div class="cell small-3 banner-right"><div class="wrapper">' . $instance['banner'] . '</div>';
         }
         $end .= '</div></section>';
 
@@ -276,6 +275,7 @@ class Widget_Products_Vien_An extends WC_Widget_Vien_An
     {
 
         $number = !empty($instance['number']) ? absint($instance['number']) : 6;
+        $number = ($number == 4 || $number == 8) ? 4 : 6;
         $res = '<section class="row multi-post"><div class="category small-12"><div class="category-left">';
 
         $categories = get_all_categories($slug);

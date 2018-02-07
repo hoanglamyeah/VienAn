@@ -32,7 +32,7 @@ global $product; ?>
             <?php endif; ?>
         </div>
         <a href="<?php echo esc_url(get_the_permalink()) ?>">
-            <img src="<?php echo get_the_post_thumbnail_url($product->get_id()) ?>" alt="">
+            <img src="<?php echo get_the_post_thumbnail_url($product->get_id(), 'shop_catalog') ?>" alt="">
 
         </a>
     </div>

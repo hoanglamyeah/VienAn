@@ -12,6 +12,11 @@
 /**
  * Twenty Seventeen only works in WordPress 4.7 or later.
  */
+
+include_once 'inc/abstract-wc-widget-vienan.php';
+include_once get_parent_theme_file_path( '/inc/class-wc-widget-products.php' );
+include_once get_parent_theme_file_path( '/inc/class-widget-post.php' );
+
 if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
     require get_template_directory() . '/inc/back-compat.php';
     return;
@@ -429,6 +434,7 @@ function twentyseventeen_widgets_init()
     ));
 
     register_widget('Widget_Products_Vien_An');
+    register_widget('Custom_New_Post_Widget');
 }
 
 add_action('widgets_init', 'twentyseventeen_widgets_init');
