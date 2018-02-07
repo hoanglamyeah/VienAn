@@ -23,9 +23,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
     text-align: center;
 }
 
-.woocommerce .quantity .qty{
-    max-width: 3.63em;
+.woocommerce .quantity {
+    margin: 0;
 }
+
+.woocommerce .quantity .qty {
+    max-width: 3.63em;
+    height: 33px;
+}
+
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
     border-radius: 0 0 0 0;
@@ -64,11 +70,9 @@ ins{
 }
 .woocommerce-breadcrumb {
 	margin:20px 0 10px!important;
-    text-transform: uppercase;
     font-size: 13px!important;
 }
 .woocommerce-breadcrumb a {
-    text-transform: uppercase;
     font-size: 13px;
 }
 
@@ -87,4 +91,126 @@ main {
 .menu .active>a, .menu .is-active>a {
     background: #fff;
     color: #000;
+}
+
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 90px;
+	height: 29px;
+}
+.woocommerce div.product .woocommerce-tabs .panel {
+    margin: 0 10px 2em 0;
+}
+
+/***Comments ****/
+
+#respond{clear:both;margin:15px 0 15px 0;padding: 15px 0 0;border-top: 1px solid #dfdfdf;}
+
+#author, #email, #url{background:#fff !important; width: 100%; color:#999; font-size:15px; padding: 8px 10px; margin:5px 5px 0 0; border:1px solid #dfdfdf; outline: none;}
+
+#comment{background:#fff !important;height: 100px;color:#999;font-family: 'proxima-nova', Arial,Tahoma,Verdana;font-size:15px;padding: 10px 10px;margin:5px 0 5px 0;border:1px solid #dfdfdf;outline: none;}
+
+.entry-comments{margin: 10px 0 0;}
+
+.comment-list{margin: 0px 0 0;padding: 0;}
+.comment-meta {
+    margin:0;
+}
+.children{margin:0; padding:0}
+
+.ping-list{margin:0 0 40px 0; padding:0}
+
+.comment-list ol, .ping-list ol{margin:0; padding:10px; max-width: 550px;}
+
+.comment-list li, .ping-list li{margin: 0px 0 5px 0;padding: 0px 0px;list-style:none;border-bottom: 0px solid #dfdfdf;position: relative;}
+
+.comment-list li ul li{margin-left:40px; margin-top: 20px;}
+
+.comment-list li ul li #respond{margin-left: -40px !important;  margin-top: 20px;}
+
+.comment-list li ul li li #respond{margin-left: -80px !important;}
+
+.comment-list p, .ping-list p{font-weight:normal; text-transform:none; margin:10px 5px 10px 0; padding:0; word-wrap: break-word;}
+
+.comment-list li .avatar{background:#fff; float:left; margin:0 10px 0 0px; border-radius: 50%; -moz-border-radius: 50%;}
+
+.comment-list cite, .comment-list cite a, .ping-list cite, .ping-list cite a{font-weight:700; font-style:normal;}
+
+.bypostauthor{}
+
+#respond:after{content:"."; display:block; height:0; clear:both; visibility:hidden}
+
+.nocomments{text-align:center}
+
+#comments .navigation{display:block; margin:10px 0 0 0}
+
+.thread-alt, .thread-even{}
+
+.even, .alt, .depth-1{}
+
+
+
+#comments h3{text-transform: uppercase; font-size: 22px; font-weight: 700 !important; padding: 0 0 10px !important; display: inline-block;}
+
+#comments h3.titlecomments:after{content:"\f00a"; font-family: Wpbeginner; position: absolute; margin: -4px 0 0 15px;}
+
+a.leavereplybutton{color: #999; background: #eaeaea; border: 1px solid #dfdfdf; padding: 8px 20px; text-transform: uppercase; border-radius: 3px; letter-spacing: 1px; float: right; font-size: 15px; display: inline-block; margin: -8px 0 0;}
+
+a.leavereplybutton:hover{background: #ff6200; color: #fff; text-decoration: none; border: 1px solid #ff6600;}
+
+.comment-content{padding: 10px 20px 10px;margin: 10px 0 0;font-size: 15px;border: 1px solid #dfdfdf;border-radius: 3px;line-height: 1.5em !important;}
+
+.comment-author{padding: 10px 5px 0;}
+
+.comment-list li .fn, .comment-list li .cfn{font-size: 15px;display: inline-block;margin: 10px 0 0;}
+.comment-list li .says{display: none;}
+.comment-list li .comment-metadata a{font-weight: normal; font-size: 14px; font-style: normal; padding: 2px 0 0 !important; color: #999;}
+.comment-list li .commentmetadata a{color: #999;}
+.comment-list li .reply{position: absolute;margin: -45px 0 0 10px;padding: 5px 10px;width: 10px;height: 10px;overflow: hidden;}
+
+.depth-4 .reply{display: none !important;}
+
+.depth-4 .comment-content{padding-bottom: 10px;}
+
+.commentfields-left{float: left; width: 290px; margin: -10px 0 0 !important;}
+
+
+
+.commentpolicy{margin: 30px 0 !important; font-size: 15px; line-height: 1.8em;}
+
+.reply a, .reply a:visited{color: #ccc; text-decoration: none; font-size:15px; font-weight: normal;}
+
+.reply a:before{content:"\f01a"; font-family: Wpbeginner; padding: 2px 5px 0 0px; font-size: 12px;}
+
+.reply a:hover, #cancel-comment-reply-link a:hover{color: #ff6200;}
+
+h3#reply-title{font-size: 15px;text-transform: uppercase;line-height:26px;padding: 0px !important;margin: 0px !important;font-weight: 700 !important;}
+
+#cancel-comment-reply-link{font-size:12px}
+
+.form-submit{text-align:left}
+
+#submit{background: #106739;text-transform: uppercase;border: 0px;cursor: pointer;color: #fff;font-size: 15px;padding: 12px 22px;display: inline-block;border-radius: 3px;font-weight: 700;letter-spacing: 1px;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+
+.comment-form-author label, .comment-form-email label, .comment-form-url label{font-family:Helvetica,sans-serif; font-size:18px; text-transform:uppercase}
+
+.comment-form-subscriptions{margin: 0; font-size: 15px; line-height: 1.8em;}
+
+#subscribe-reloaded{width: auto !important;}
+
+.comment-pagination{padding: 25px 0;}
+
+.page-numbers, .page-numbers:visited{border: 1px solid #dfdfdf; background: #f0f0f0; padding: 10px 10px; border-radius: 3px; color: #999;}
+
+.wpb-load-more-comments{border: 1px solid #dfdfdf; background: #f0f0f0; padding: 10px 20px; border-radius: 3px; color: #999; font-size: 14px; text-transform: uppercase; font-weight: 700;}
+
+.wpb-load-more-comments:hover{background: #ff6200; color: #fff; border: 1px solid #ff6600; text-decoration: none;}
+
+
+.page-numbers:hover, .comment-pagination .current{background: #ff6200; color: #fff; border: 1px solid #ff6600; text-decoration: none;}
+
+.search-form .input-group-label select {
+    height: 37px;
+    border: 0px;
+    background-color: #e6e6e6;
+    box-shadow: none;
 }

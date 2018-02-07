@@ -24,6 +24,14 @@
 
 <body <?php body_class(); ?>>
 <header>
+    <?php if (is_active_sidebar('banner-top')) : ?>
+        <div class="header-ads">
+            <div class="wrapper">
+                <?php dynamic_sidebar('banner-top'); ?>
+            </div>
+        </div>
+
+    <?php endif; ?>
 
     <div class="wrapper">
         <div class="main-header">
@@ -36,7 +44,8 @@
                 <div class="small-3">
                     <ul class="menu" data-dropdown-menu>
                         <li class="logo-aria">
-                            <a href="<?php echo get_home_url(); ?>"><img src="https://thietbiytevienan.com/wp-content/uploads/2018/01/logvienanmoi-01-01-01.png"/></a>
+                            <a href="<?php echo get_home_url(); ?>"><img
+                                        src="https://thietbiytevienan.com/wp-content/uploads/2018/01/logvienanmoi-01-01-01.png"/></a>
                         </li>
                     </ul>
                 </div>

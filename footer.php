@@ -13,50 +13,41 @@
  */
 
 ?>
-<div class="small-12 subscribe">
-    <div class="wrapper grid-x">
-        <div class="large-auto cell">
-            <h4 class="title">ĐĂNG KÝ NHẬN BẢN TIN VÀ NHIỀU TÀI LIỆU BỔ ÍCH</h4>
-        </div>
-        <div class="large-auto cell">
-            <div class="medium-12 input-group">
-                <input class="input-group-field" type="text">
-                <div class="input-group-button">
-                    <input type="submit" class="button" value="Submit">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<?php if (is_active_sidebar('subscribe-form')) : ?>
+    <?php dynamic_sidebar('subscribe-form'); ?>
+<?php endif; ?>
+
 <footer class="footer">
     <?php
-    if ( is_active_sidebar( 'sidebar-footer-1' ) ||
-        is_active_sidebar( 'sidebar-footer-2' ) ) :
+    if (is_active_sidebar('sidebar-footer-1') ||
+        is_active_sidebar('sidebar-footer-2')
+    ) :
         ?>
 
         <div class="wrapper">
             <div class="grid-x">
                 <?php
-                if ( is_active_sidebar( 'sidebar-footer-1' ) ) { ?>
+                if (is_active_sidebar('sidebar-footer-1')) { ?>
                     <div class="large-auto cell footer-widget">
-                        <?php dynamic_sidebar( 'sidebar-footer-1' ); ?>
+                        <?php dynamic_sidebar('sidebar-footer-1'); ?>
                     </div>
                 <?php }
-                if ( is_active_sidebar( 'sidebar-footer-2' ) ) { ?>
+                if (is_active_sidebar('sidebar-footer-2')) { ?>
                     <div class="large-auto cell footer-widget">
-                        <?php dynamic_sidebar( 'sidebar-footer-2' ); ?>
+                        <?php dynamic_sidebar('sidebar-footer-2'); ?>
                     </div>
                 <?php } ?>
                 <?php
-                if ( is_active_sidebar( 'sidebar-footer-3' ) ) { ?>
+                if (is_active_sidebar('sidebar-footer-3')) { ?>
                     <div class="large-auto cell footer-widget">
-                        <?php dynamic_sidebar( 'sidebar-footer-3' ); ?>
+                        <?php dynamic_sidebar('sidebar-footer-3'); ?>
                     </div>
                 <?php } ?>
                 <?php
-                if ( is_active_sidebar( 'sidebar-footer-4' ) ) { ?>
+                if (is_active_sidebar('sidebar-footer-4')) { ?>
                     <div class="large-auto cell footer-widget">
-                        <?php dynamic_sidebar( 'sidebar-footer-4' ); ?>
+                        <?php dynamic_sidebar('sidebar-footer-4'); ?>
                     </div>
                 <?php } ?>
             </div>

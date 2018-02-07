@@ -409,7 +409,7 @@ function twentyseventeen_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => __('Footer 3', 'twentyseventeen'),
+        'name' => __('Cuối trang 3', 'twentyseventeen'),
         'id' => 'sidebar-footer-3',
         'description' => __('Add widgets here to appear in your footer.', 'twentyseventeen'),
         'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
@@ -419,7 +419,7 @@ function twentyseventeen_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => __('Footer 4', 'twentyseventeen'),
+        'name' => __('Cuối trang 4', 'twentyseventeen'),
         'id' => 'sidebar-footer-4',
         'description' => __('Add widgets here to appear in your footer.', 'twentyseventeen'),
         'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="wrap">',
