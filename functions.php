@@ -744,3 +744,4 @@ function my_custom_woocommerce_theme_support()
 }
 
 add_action('after_setup_theme', 'my_custom_woocommerce_theme_support');
+
