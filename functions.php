@@ -747,7 +747,12 @@ require get_parent_theme_file_path('/inc/custom_lam.php');
 function my_custom_woocommerce_theme_support()
 {
     add_theme_support('woocommerce');
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 }
 
 add_action('after_setup_theme', 'my_custom_woocommerce_theme_support');
 
+
+define( 'SCRIPT_DEBUG', true );
