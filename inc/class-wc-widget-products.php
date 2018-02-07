@@ -14,6 +14,8 @@ if (!defined('ABSPATH')) {
  * @extends  WC_Widget
  */
 
+include 'abstract-wc-widget-vienan.php';
+
 $category_options = array();
 
 function get_cate()
@@ -35,7 +37,7 @@ function get_cate()
 add_action('init', 'get_cate');
 
 
-class Widget_Products_Vien_An extends WC_Widget
+class Widget_Products_Vien_An extends WC_Widget_Vien_An
 {
 
     /**
