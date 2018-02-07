@@ -50,5 +50,5 @@ ins{
 }
 .woocommerce div.product p.price{
     color: red;
-    font-size: 1.75em;
+    max-font-size: 1.75em;
 }
